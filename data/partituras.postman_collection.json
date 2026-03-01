@@ -14,6 +14,14 @@
         "header": []
       },
       "response": []
+    },
+    {
+      "name": "detalhar",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
     }
   ]
 }

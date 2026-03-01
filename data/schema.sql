@@ -10,7 +10,7 @@ CREATE TABLE partitura (
                            bpm           INTEGER      CHECK (bpm > 0),
                            tonalidade    VARCHAR(10)  NOT NULL,
                            avaliacao     INTEGER      CHECK (avaliacao >= 1 AND avaliacao <= 5),
-                           data_criacao  TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
+                           data_criacao  DATE	      DEFAULT CURRENT_DATE,
 
 -- Validação das siglas de tonalidade
     CONSTRAINT check_tonalidade_sigla CHECK (tonalidade IN (

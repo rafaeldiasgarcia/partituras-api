@@ -1,28 +1,20 @@
-package br.com.partituras.partituras.domain;
+package br.com.partituras.partituras.controller.response;
 
-import jakarta.persistence.*;
+import br.com.partituras.partituras.domain.Tonalidade;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Getter @Setter
-@Entity
-public class Partitura {
+public class DetalharPartituraResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String titulo;
     private String autor;
     private String arranjador;
     private Integer bpm;
     private Integer avaliacao;
     private LocalDate dataCriacao;
-
-    @Enumerated(EnumType.STRING)
     private Tonalidade tonalidade;
-
-
 }
