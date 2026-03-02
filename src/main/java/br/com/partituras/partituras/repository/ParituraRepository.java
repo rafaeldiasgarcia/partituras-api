@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ParituraRepository extends JpaRepository<Partitura, Long> {
 
+    boolean existsByTitulo(String titulo);
+    boolean existsByAutor(String autor);
 }

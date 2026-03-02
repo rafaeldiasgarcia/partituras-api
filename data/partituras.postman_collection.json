@@ -1,17 +1,19 @@
 {
   "info": {
-    "_postman_id": "53d817bc-2f77-4497-b904-34c75ffdb06a",
+    "_postman_id": "5b106044-5007-430c-af57-19454cde0704",
     "name": "partituras",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "34266351",
-    "_collection_link": "https://go.postman.co/collection/34266351-53d817bc-2f77-4497-b904-34c75ffdb06a?source=collection_link"
+    "_exporter_id": "34266351"
   },
   "item": [
     {
       "name": "listar",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": ""
+        }
       },
       "response": []
     },
@@ -19,7 +21,38 @@
       "name": "detalhar",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "adiconar",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"titulo\": \"Lagrima\",\r\n    \"autor\": \"Francisco Tárrega\",\r\n    \"arranjador\": \"Francisco Tárrega\",\r\n    \"bpm\": 75,\r\n    \"avaliacao\": 4,\r\n    \"tonalidade\": \"E\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/partituras",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "partituras"
+          ]
+        }
       },
       "response": []
     }

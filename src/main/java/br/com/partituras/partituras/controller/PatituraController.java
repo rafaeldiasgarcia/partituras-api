@@ -1,14 +1,15 @@
 package br.com.partituras.partituras.controller;
 
+import br.com.partituras.partituras.controller.request.AdicionarPartituraRequest;
 import br.com.partituras.partituras.controller.response.DetalharPartituraResponse;
 import br.com.partituras.partituras.controller.response.ListarPartituraResponse;
+import br.com.partituras.partituras.service.AdcionarPartituraService;
 import br.com.partituras.partituras.service.DetalharPartituraService;
 import br.com.partituras.partituras.service.ListarPartituraService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +23,9 @@ public class PatituraController {
     @Autowired
     private DetalharPartituraService detalharPartituraService;
 
+    @Autowired
+    private AdcionarPartituraService adcionarPartituraService;
+
     @GetMapping
     public List<ListarPartituraResponse> lista() {
 
@@ -32,5 +36,12 @@ public class PatituraController {
     public DetalharPartituraResponse detalhar(@PathVariable Long id) {
 
         return detalharPartituraService.detalhar(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void adicionar(@Valid @RequestBody AdicionarPartituraRequest request) {
+
+        adcionarPartituraService.adicionar(request);
     }
 }
