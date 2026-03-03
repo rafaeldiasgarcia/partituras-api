@@ -8,22 +8,53 @@
   "item": [
     {
       "name": "listar",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "GET",
         "header": [],
-        "url": {
+        "body": {
+          "mode": "raw",
           "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/partituras",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "partituras"
+          ]
         }
       },
       "response": []
     },
     {
       "name": "detalhar",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "GET",
         "header": [],
-        "url": {
+        "body": {
+          "mode": "raw",
           "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/partituras/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "partituras",
+            "1"
+          ]
         }
       },
       "response": []
@@ -35,7 +66,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"titulo\": \"Lagrima\",\r\n    \"autor\": \"Francisco Tárrega\",\r\n    \"arranjador\": \"Francisco Tárrega\",\r\n    \"bpm\": 75,\r\n    \"avaliacao\": 4,\r\n    \"tonalidade\": \"E\"\r\n}",
+          "raw": "{\r\n    \"titulo\": \"Lagrimas\",\r\n    \"autor\": \"Francisco Tárrega\",\r\n    \"arranjador\": \"Francisco Tárrega\",\r\n    \"bpm\": 75,\r\n    \"avaliacao\": 4,\r\n    \"tonalidade\": \"E\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -51,6 +82,35 @@
           "port": "8080",
           "path": [
             "partituras"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "atualizar",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"titulo\": \"Lagrima\",\r\n    \"autor\": \"Francisco Tárrega\",\r\n    \"arranjador\": \"Francisco Tárrega\",\r\n    \"bpm\": 80,\r\n    \"avaliacao\": 4,\r\n    \"tonalidade\": \"E\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/partituras/9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "partituras",
+            "9"
           ]
         }
       },

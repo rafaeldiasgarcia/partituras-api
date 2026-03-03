@@ -1,9 +1,11 @@
 package br.com.partituras.partituras.controller;
 
 import br.com.partituras.partituras.controller.request.AdicionarPartituraRequest;
+import br.com.partituras.partituras.controller.request.AtualizarPartituraRequest;
 import br.com.partituras.partituras.controller.response.DetalharPartituraResponse;
 import br.com.partituras.partituras.controller.response.ListarPartituraResponse;
 import br.com.partituras.partituras.service.AdcionarPartituraService;
+import br.com.partituras.partituras.service.AtualizarPartituraService;
 import br.com.partituras.partituras.service.DetalharPartituraService;
 import br.com.partituras.partituras.service.ListarPartituraService;
 import jakarta.validation.Valid;
@@ -26,6 +28,9 @@ public class PatituraController {
     @Autowired
     private AdcionarPartituraService adcionarPartituraService;
 
+    @Autowired
+    private AtualizarPartituraService atualizarPartituraService;
+
     @GetMapping
     public List<ListarPartituraResponse> lista() {
 
@@ -43,5 +48,12 @@ public class PatituraController {
     public void adicionar(@Valid @RequestBody AdicionarPartituraRequest request) {
 
         adcionarPartituraService.adicionar(request);
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void atualizar(@PathVariable Long id, @Valid @RequestBody AtualizarPartituraRequest request) {
+
+        atualizarPartituraService.atualizar(id, request);
     }
 }
