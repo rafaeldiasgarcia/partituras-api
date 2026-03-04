@@ -7,6 +7,7 @@ import br.com.partituras.partituras.controller.response.ListarPartituraResponse;
 import br.com.partituras.partituras.service.AdcionarPartituraService;
 import br.com.partituras.partituras.service.AtualizarPartituraService;
 import br.com.partituras.partituras.service.DetalharPartituraService;
+import br.com.partituras.partituras.service.DeletarPartituraService;
 import br.com.partituras.partituras.service.ListarPartituraService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,9 @@ public class PatituraController {
 
     @Autowired
     private AtualizarPartituraService atualizarPartituraService;
+
+    @Autowired
+    private DeletarPartituraService deletarPartituraService;
 
     @GetMapping
     public List<ListarPartituraResponse> lista() {
@@ -55,5 +59,12 @@ public class PatituraController {
     public void atualizar(@PathVariable Long id, @Valid @RequestBody AtualizarPartituraRequest request) {
 
         atualizarPartituraService.atualizar(id, request);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletar(@PathVariable Long id) {
+
+        deletarPartituraService.deletar(id);
     }
 }
