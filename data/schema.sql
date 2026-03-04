@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS partitura;
+
 CREATE TABLE partitura (
                            id            BIGSERIAL    PRIMARY KEY,
                            titulo        VARCHAR(255) NOT NULL,
